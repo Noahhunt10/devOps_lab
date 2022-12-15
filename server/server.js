@@ -25,6 +25,15 @@ app.get('/', (req,res) => {
 
 })
 
+app.get('/fake', (req, res) => {
+    try {
+      doesNotExsist();
+    }catch(err){
+      rollbar.log('This is working')
+    }
+
+})
+
 
 
 app.listen(4000, console.log('Server running on 4000.'))
